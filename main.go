@@ -16,7 +16,6 @@ func withdraw(balance *int, wg *sync.WaitGroup, mx *sync.Mutex, amount int){
 	//critical region
 	*balance = *balance - amount;
 
-	mx.Unlock()
 }
 
 func deposit(balance *int, wg *sync.WaitGroup, mx *sync.Mutex, amount int){
@@ -29,7 +28,6 @@ func deposit(balance *int, wg *sync.WaitGroup, mx *sync.Mutex, amount int){
 	//critical region
 	*balance = *balance + amount;
 
-	mx.Unlock()
 	
 }
 
